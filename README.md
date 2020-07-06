@@ -17,9 +17,9 @@ plugins: [
 Create an options RC file in your project's root named `.i18n-modular-rc.js` with this example content:
 ```javascript
 module.exports = {
-  // Opional, your keys will be relative to this folder, usually `./app` or `./client`
+  // Optional, your keys will be relative to this folder, usually `./app` or `./client`
   keysRoot: './',
-  // Opional, how you will be naming your translation modules, similar to name.module.css
+  // Optional, how you will be naming your translation modules, similar to name.module.css
   moduleEnding: '.translations.json',
 
   // Usually the same as the location in phraseapp.yml
@@ -31,6 +31,53 @@ module.exports = {
 
 If you don't expect to use the CLI (see below), then instead of creating an RC file you
 can simply pass an options object as an argument to the plugin.
+
+Create a translations module `myfile.translations.json`:
+```json
+{
+   "de-DE": {
+     "content": {
+       "totally": {
+         "necessary": {
+           "nesting": "Majestätischer Inhalt"
+         }
+       }
+     },
+     "title": "Unglaublicher Titel"
+   },
+   "en-US": {
+     "content": {
+       "totally": {
+         "necessary": {
+           "nesting": "Majestic content"
+         }
+       }
+     },
+     "title": "Amazing title"
+   }
+ }
+```
+
+Import translations:
+```javascript
+import translations from './myfile.translations';
+
+// Instead of string paths use object lookup
+t(translations.title);
+
+// Nesting is fully supported
+t(translations.content.totally.necessary.nesting);
+```
+
+When importing your translation modules all of the values will be remapped to lookup strings for your main dictionary.
+
+Load your main dictionary like usual:
+```javascript
+import dictionary from '../dictionaries/de-DE';
+// Pass the dictionary to your translations library, e.g. Polyglot.
+```
+
+The dictionary will contain it's original content and the generated modules.
 
 ## Options:
 
