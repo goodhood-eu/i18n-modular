@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "keysRoot": {
+      "type": "string",
+      "minLength": 1
+    },
+    "moduleEnding": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\.json$"
+    },
+    "dictionaryPattern": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\[locale_code\\].*\\.json$"
+    }
+  },
+  "required": ["keysRoot", "moduleEnding", "dictionaryPattern"],
+  "additionalProperties": false
+}
