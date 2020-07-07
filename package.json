@@ -1,0 +1,56 @@
+{
+  "name": "i18n-modular",
+  "description": "Modular approach for i18n in Webpack, similar to CSS Modules",
+  "author": "Nebenan.de <max@nebenan.de>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "repository": "goodhood-eu/i18n-modular",
+  "bugs": "https://github.com/goodhood-eu/i18n-modular/issues",
+  "version": "1.0.0-beta.2",
+  "keywords": [
+    "webpack",
+    "phrase",
+    "phraseapp",
+    "i18n",
+    "translation",
+    "locale",
+    "language",
+    "localization"
+  ],
+  "bin": {
+    "i18n-modular": "./bin/cli.js"
+  },
+  "files": [
+    "bin/*.js",
+    "lib/loaders/*.js",
+    "lib/*.js",
+    "lib/*.json",
+    "!lib/*.test.js"
+  ],
+  "main": "lib/plugin.js",
+  "scripts": {
+    "reinstall": "rm -rf node_modules package-lock.json && npm install",
+    "lint": "eslint ./",
+    "prepublishOnly": "npm test && npm run lint && echo \"\\033[0;32mReady to publish\\033[0m\"",
+    "test": "TZ='GMT' mocha \"./{,!(node_modules)/**}/*.test.{js,jsx}\""
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-nebenan-base": "^1.0.0",
+    "mocha": "^8.0.1"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "debug": "^4.1.1",
+    "escape-string-regexp": "^4.0.0",
+    "lodash": "^4.17.15",
+    "loader-utils": "^2.0.0",
+    "schema-utils": "^2.7.0",
+    "webpack": "^4.x.x",
+    "webpack-sources": "^1.4.3"
+  },
+  "peerDependencies": {
+    "webpack": "^4.x.x"
+  }
+}
