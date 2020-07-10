@@ -6,7 +6,7 @@
   "readmeFilename": "README.md",
   "repository": "goodhood-eu/i18n-modular",
   "bugs": "https://github.com/goodhood-eu/i18n-modular/issues",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [
     "webpack",
     "phrase",
