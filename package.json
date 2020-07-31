@@ -32,6 +32,7 @@
     "reinstall": "rm -rf node_modules package-lock.json && npm install",
     "lint": "eslint ./",
     "start": "DEBUG=i18n_modular npx webpack-dev-server --config fixtures/webpack.config.js",
+    "build": "DEBUG=i18n_modular npx webpack --config fixtures/webpack.config.js",
     "prepublishOnly": "npm test && npm run lint && echo \"\\033[0;32mReady to publish\\033[0m\"",
     "test": "TZ='GMT' mocha \"./{,!(node_modules)/**}/*.test.{js,jsx}\""
   },
