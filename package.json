@@ -31,14 +31,22 @@
   "scripts": {
     "reinstall": "rm -rf node_modules package-lock.json && npm install",
     "lint": "eslint ./",
+    "start": "DEBUG=i18n_modular npx webpack-dev-server --config fixtures/webpack.config.js",
     "prepublishOnly": "npm test && npm run lint && echo \"\\033[0;32mReady to publish\\033[0m\"",
     "test": "TZ='GMT' mocha \"./{,!(node_modules)/**}/*.test.{js,jsx}\""
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^4.0.0",
     "eslint": "^6.8.0",
     "eslint-config-nebenan-base": "^1.0.0",
-    "mocha": "^8.0.1"
+    "html-webpack-plugin": "^4.3.0",
+    "mocha": "^8.0.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-manifest-plugin": "^2.2.0"
   },
   "dependencies": {
     "chalk": "^4.1.0",
@@ -47,7 +55,6 @@
     "loader-utils": "^2.0.0",
     "lodash": "^4.17.19",
     "schema-utils": "^2.7.0",
-    "webpack": "^4.x.x",
     "webpack-sources": "^1.4.3"
   },
   "peerDependencies": {

@@ -35,27 +35,27 @@ can simply pass an options object as an argument to the plugin.
 Create a translations module `myfile.translations.json`:
 ```json
 {
-   "de-DE": {
-     "content": {
-       "totally": {
-         "necessary": {
-           "nesting": "Majestätischer Inhalt"
-         }
-       }
-     },
-     "title": "Unglaublicher Titel"
-   },
-   "en-US": {
-     "content": {
-       "totally": {
-         "necessary": {
-           "nesting": "Majestic content"
-         }
-       }
-     },
-     "title": "Amazing title"
-   }
- }
+  "de-DE": {
+    "content": {
+      "totally": {
+        "necessary": {
+          "nesting": "Majestätischer Inhalt"
+        }
+      }
+    },
+    "title": "Unglaublicher Titel"
+  },
+  "en-US": {
+    "content": {
+      "totally": {
+        "necessary": {
+          "nesting": "Majestic content"
+        }
+      }
+    },
+    "title": "Amazing title"
+  }
+}
 ```
 
 Import translations:

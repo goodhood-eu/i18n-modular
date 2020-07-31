@@ -1,0 +1,22 @@
+{
+  "de-DE": {
+    "content": {
+      "totally": {
+        "necessary": {
+          "nesting": "Majestätischer Inhalt"
+        }
+      }
+    },
+    "title": "Unglaublicher Titel"
+  },
+  "en-US": {
+    "content": {
+      "totally": {
+        "necessary": {
+          "nesting": "Majestic content"
+        }
+      }
+    },
+    "title": "Amazing title"
+  }
+}
