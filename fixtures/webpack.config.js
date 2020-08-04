@@ -8,6 +8,7 @@ const I18nModular = require('../lib/plugin');
 
 module.exports = {
   entry: path.resolve(`${__dirname}/app/app.js`),
+  context: __dirname,
   mode: 'development',
   devtool: 'inline-cheap-module-source-map',
   output: {
