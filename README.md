@@ -25,6 +25,8 @@ module.exports = {
   // Usually the same as the location in phraseapp.yml
   // the path to your dictionary folder or files with [locale_code]
   // to be replaced with the language name.
+  // Path must be relative to the process.cwd() or `context` option passed to webpack.
+  // Sync script also uses this option to locate dictionaries
   dictionaryPattern: './dictionaries/[locale_code].json',
 };
 ```
