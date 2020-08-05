@@ -10,7 +10,6 @@ module.exports = {
   entry: path.resolve(`${__dirname}/app/app.js`),
   context: __dirname,
   mode: 'development',
-  devtool: 'inline-cheap-module-source-map',
   output: {
     path: path.resolve(`${__dirname}/assets`),
     filename: '[name]-[contenthash:8].js',
