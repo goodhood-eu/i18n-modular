@@ -18,8 +18,6 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new I18nModular({
-      keysRoot: './app',
-      dictionaryPattern: './dictionaries/[locale_code].json',
       emitFile: false,
     }),
     new ManifestPlugin(),
