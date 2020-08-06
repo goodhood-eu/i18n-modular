@@ -17,9 +17,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new I18nModular({
-      emitFile: false,
-    }),
+    new I18nModular({ emitFile: false }),
     new ManifestPlugin(),
     new CompressionPlugin({
       filename: '[path].gz[query]',

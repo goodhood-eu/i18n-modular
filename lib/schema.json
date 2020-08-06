@@ -2,18 +2,18 @@
   "type": "object",
   "properties": {
     "keysRoot": {
-      "description": "Context folder for the keys to be relative to",
+      "description": "Absolute or relative path for module ids to be relative to",
       "type": "string",
       "minLength": 1
     },
     "moduleEnding": {
-      "description": "Regexp to match translation modules",
+      "description": "Ending of module file names, for exampe: \".translations.json\"",
       "type": "string",
       "minLength": 1,
       "pattern": "\\.json$"
     },
     "dictionaryPattern": {
-      "description": "Relative path to the dictionary files",
+      "description": "Absolute or relative path to the dictionary files with [locale_code] in file name.",
       "type": "string",
       "minLength": 1,
       "pattern": "\\[locale_code\\].*\\.json$"
