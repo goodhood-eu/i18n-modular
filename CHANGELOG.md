@@ -8,6 +8,7 @@
  - Added module loader to exports in case only remapping is needed
  - Moved all id generation option from plugin into the loader, now loader can work independently
  - Added new "emitFile" option, when set to `false` will not emit updated dictionary files
+ - Resolved issue where removing a module from compilation during watch wouldn't remove it from the resulting dictionary
 
 # 1.0.2
  - Resolved an issue with inconsistent sorting of dictionary keys
