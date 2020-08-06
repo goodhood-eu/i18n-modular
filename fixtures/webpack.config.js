@@ -20,6 +20,7 @@ module.exports = {
     new I18nModular({
       keysRoot: path.resolve(`${__dirname}/app`),
       dictionaryPattern: './dictionaries/[locale_code].json',
+      // emitFile: false,
     }),
     new ManifestPlugin(),
     new CompressionPlugin({

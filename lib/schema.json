@@ -2,18 +2,25 @@
   "type": "object",
   "properties": {
     "keysRoot": {
+      "description": "Context folder for the keys to be relative to",
       "type": "string",
       "minLength": 1
     },
     "moduleEnding": {
+      "description": "Regexp to match translation modules",
       "type": "string",
       "minLength": 1,
       "pattern": "\\.json$"
     },
     "dictionaryPattern": {
+      "description": "Relative path to the dictionary files",
       "type": "string",
       "minLength": 1,
       "pattern": "\\[locale_code\\].*\\.json$"
+    },
+    "emitFile": {
+      "description": "Enables/Disables emitting dictionary files",
+      "type": "boolean"
     }
   },
   "required": ["keysRoot", "moduleEnding", "dictionaryPattern"],
