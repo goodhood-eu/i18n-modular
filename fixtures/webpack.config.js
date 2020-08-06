@@ -18,9 +18,9 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new I18nModular({
-      keysRoot: path.resolve(`${__dirname}/app`),
+      keysRoot: './app',
       dictionaryPattern: './dictionaries/[locale_code].json',
-      // emitFile: false,
+      emitFile: false,
     }),
     new ManifestPlugin(),
     new CompressionPlugin({
