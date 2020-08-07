@@ -6,6 +6,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const I18nModular = require('../lib/plugin');
 
+const emitFile = Boolean(process.env.PREVIEW_EMIT_FILE);
+
 module.exports = {
   entry: path.resolve(`${__dirname}/app/app.js`),
   context: __dirname,
@@ -17,7 +19,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new I18nModular({ emitFile: false }),
+    new I18nModular({ emitFile }),
     new ManifestPlugin(),
     new CompressionPlugin({
       filename: '[path].gz[query]',
