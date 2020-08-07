@@ -34,8 +34,9 @@
     "sync": "DEBUG=i18n_modular I18N_MODULAR_CONTEXT=./fixtures node ./bin/cli.js",
     "start": "DEBUG=i18n_modular I18N_MODULAR_CONTEXT=./fixtures webpack-dev-server --config fixtures/webpack.config.js --port 3000",
     "build": "DEBUG=i18n_modular I18N_MODULAR_CONTEXT=./fixtures webpack --config fixtures/webpack.config.js",
-    "testbuild": "npm run build && PREVIEW_EMIT_FILE=true npm run build && npm run sync build && npm run sync update && npm run sync clean",
-    "prepublishOnly": "npm run testbuild && npm test && npm run lint && echo \"\\033[0;32mReady to publish\\033[0m\"",
+    "test:build": "npm run build && PREVIEW_EMIT_FILE=true npm run build && npm run sync build && npm run sync update && npm run sync clean",
+    "check": "npm run test:build && npm test && npm run lint",
+    "prepublishOnly": "npm run check && echo \"\\033[0;32mReady to publish\\033[0m\"",
     "test": "TZ='GMT' mocha \"./{,!(node_modules)/**}/*.test.{js,jsx}\""
   },
   "devDependencies": {
