@@ -1,14 +1,14 @@
 # 1.1.0
  - Improved sorting of module keys
- - Resolved issues with certain `devtool` options breaking build
+ - Resolved issues with some of the `devtool` options breaking build
  - Resolved issues with `context` option breaking build
- - Resolved issues with incorrectly calculating size of output chunks
- - Resolved issue with cache of the chunk not changing when translations change
- - Made updating modules independent from module IDs
- - Added module loader to exports in case only remapping is needed
- - Moved all id generation option from plugin into the loader, now loader can work independently
+ - Resolved issues with incorrectly calculating size of the output chunks
+ - Resolved an issue with cache of the chunk not changing when translations change
+ - Made `i18n-modular update` not depend on reverse-creating file paths from keys. `i18n-modular update` will not create new modules anymore.
+ - Added module loader to exports in case only remapping of keys is necessary
+ - Moved module id generation logic from the plugin into the loader, now module loader can work independently from the plugin
  - Added new "emitFile" option, when set to `false` will not emit updated dictionary files
- - Resolved issue where removing a module from compilation during watch wouldn't remove it from the resulting dictionary
+ - Resolved an issue where removing a module from compilation during watch mode wouldn't remove it from the resulting dictionary
 
 # 1.0.2
  - Resolved an issue with inconsistent sorting of dictionary keys
