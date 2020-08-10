@@ -17,6 +17,14 @@ module.exports = {
     filename: '[name]-[contenthash:8].js',
     chunkFilename: '[name]-[chunkhash:8].js',
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new I18nModular({ emitFile }),
