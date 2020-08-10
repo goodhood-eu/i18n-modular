@@ -9,7 +9,7 @@ const I18nModular = require('../lib/plugin');
 const emitFile = Boolean(process.env.PREVIEW_EMIT_FILE);
 
 module.exports = {
-  entry: path.resolve(`${__dirname}/app/app.js`),
+  entry: './app/app.js',
   context: __dirname,
   mode: 'development',
   output: {

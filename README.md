@@ -155,4 +155,4 @@ You could add this to your package.json:
 
 ## Debugging
 
-This module uses [debug](https://github.com/visionmedia/debug) internally with this label `i18n_modular`. To debug use DEBUG=i18n_modular in your env: `DEBUG=i18n_modular npx webpack`.
+This module uses [debug](https://github.com/visionmedia/debug) internally with label `i18n_modular`. To debug use DEBUG=i18n_modular in your env: `DEBUG=i18n_modular npx webpack`.
