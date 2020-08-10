@@ -25,12 +25,12 @@ module.exports = {
   // similar to name.module.css, or in this case name.translations.json
   moduleEnding: '.translations.json',
 
-  // Usually the same as the location in phraseapp.yml - the path to your dictionary folder or files 
+  // Usually the same as the location in phraseapp.yml - the path to your dictionary folder or files
   // where [locale_code] is to be replaced with the language name.
   // Path must be either absolute or relative to the process.cwd() or `context` option passed to webpack.
   // Sync binary also uses this option to locate dictionaries.
   dictionaryPattern: './dictionaries/[locale_code].json',
-  
+
   // Optional, signals that the original dictionary is to be updated at the end of modules bundling, defaults to `true`.
   // Set this to `false` when you don't need to update the original dictionary
   // and only wish to use bundled translations, for example for SSR bundle build.
@@ -134,7 +134,7 @@ This package comes with a CLI because you might need a way to sync updates from 
  - `npx i18n-modular build` will build all dictionaries from modules
  - `npx i18n-modular update` will update all modules from dictionaries. This will not create any new module files from dictionary as this is likely a result of a typo.
  - `npx i18n-modular clean` will remove all generated modules from dictionaries
- 
+
 ### env:
 
 We support `I18N_MODULAR_CONTEXT` env variable to set current working directory to something else. It works similarly to webpack's `context` option. When set both plugin and `i18n-modular` binary will look for the RC file relative to that context folder. In addition when running the `i18n-modular` binary all relative file paths in the RC file will be relative to that context. `I18N_MODULAR_CONTEXT` itself accepts paths relative to current working directory, e.g. one could set `I18N_MODULAR_CONTEXT=./frontend/app` and it would work.
@@ -143,7 +143,7 @@ We support `I18N_MODULAR_CONTEXT` env variable to set current working directory 
 
  - `npx i18n-modular build && phraseapp push` will push all generated modules to phraseapp
  - `phraseapp pull && npx i18n-modular update` will update all modules with changes from phraseapp
- 
+
 You could add this to your package.json:
 ```json
 "scripts": {
