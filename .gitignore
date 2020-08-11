@@ -31,3 +31,5 @@ node_modules/*
 
 # MacOS
 .DS_Store
+
+fixtures/assets

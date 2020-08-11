@@ -6,7 +6,7 @@
   "readmeFilename": "README.md",
   "repository": "goodhood-eu/i18n-modular",
   "bugs": "https://github.com/goodhood-eu/i18n-modular/issues",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "keywords": [
     "webpack",
     "phrase",
@@ -31,14 +31,29 @@
   "scripts": {
     "reinstall": "rm -rf node_modules package-lock.json && npm install",
     "lint": "eslint ./",
-    "prepublishOnly": "npm test && npm run lint && echo \"\\033[0;32mReady to publish\\033[0m\"",
+    "sync": "DEBUG=i18n_modular I18N_MODULAR_CONTEXT=./fixtures ./bin/cli.js",
+    "start": "DEBUG=i18n_modular I18N_MODULAR_CONTEXT=./fixtures webpack-dev-server --config fixtures/webpack.config.js --port 3000",
+    "build": "DEBUG=i18n_modular I18N_MODULAR_CONTEXT=./fixtures webpack --config fixtures/webpack.config.js",
+    "test:build": "npm run build && PREVIEW_EMIT_FILE=true npm run build && npm run sync build && npm run sync update && npm run sync clean",
+    "check": "npm run test:build && npm test && npm run lint",
+    "prepublishOnly": "npm run check && echo \"\\033[0;32mReady to publish\\033[0m\"",
     "test": "TZ='GMT' mocha \"./{,!(node_modules)/**}/*.test.{js,jsx}\""
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^4.0.0",
+    "css-loader": "^4.2.1",
     "eslint": "^6.8.0",
     "eslint-config-nebenan-base": "^1.0.0",
-    "mocha": "^8.0.1"
+    "highlight.js": "^10.1.2",
+    "html-webpack-plugin": "^4.3.0",
+    "mocha": "^8.1.1",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-manifest-plugin": "^2.2.0"
   },
   "dependencies": {
     "chalk": "^4.1.0",
@@ -47,7 +62,6 @@
     "loader-utils": "^2.0.0",
     "lodash": "^4.17.19",
     "schema-utils": "^2.7.0",
-    "webpack": "^4.x.x",
     "webpack-sources": "^1.4.3"
   },
   "peerDependencies": {
