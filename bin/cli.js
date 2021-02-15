@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const chalk = require('chalk');
-const validate = require('schema-utils');
+const { validate } = require('schema-utils');
 
 const { debug, rebase, getContext, getOptions } = require('../lib/utils');
 

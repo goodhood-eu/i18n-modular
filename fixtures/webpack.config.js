@@ -1,7 +1,6 @@
 const path = require('path');
 
-const ManifestPlugin = require('webpack-manifest-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const I18nModular = require('../lib/plugin');
@@ -13,6 +12,7 @@ module.exports = {
   context: __dirname,
   mode: 'development',
   output: {
+    publicPath: '/',
     path: path.resolve(`${__dirname}/assets`),
     filename: '[name]-[contenthash:8].js',
     chunkFilename: '[name]-[chunkhash:8].js',
@@ -28,11 +28,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new I18nModular({ emitFile }),
-    new ManifestPlugin(),
-    new CompressionPlugin({
-      filename: '[path].gz[query]',
-      test: /\.(js|css|html|svg)$/,
-    }),
+    new WebpackManifestPlugin(),
     new HtmlWebpackPlugin(),
   ],
 };
