@@ -30,7 +30,9 @@ module.exports = {
     new CleanWebpackPlugin(),
     new I18nModular({ emitFile }),
     new WebpackManifestPlugin(),
-    new CompressionPlugin(),
+    new CompressionPlugin({
+      test: /\.(js|css|html|svg)$/,
+    }),
     new HtmlWebpackPlugin(),
   ],
 };
