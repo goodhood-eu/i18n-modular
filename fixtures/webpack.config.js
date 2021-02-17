@@ -1,6 +1,7 @@
 const path = require('path');
 
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const I18nModular = require('../lib/plugin');
@@ -29,6 +30,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new I18nModular({ emitFile }),
     new WebpackManifestPlugin(),
+    new CompressionPlugin(),
     new HtmlWebpackPlugin(),
   ],
 };
