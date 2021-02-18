@@ -14,7 +14,7 @@ module.exports = {
   mode: 'development',
   devServer: {
     // Simulates a case where we have to watch the dictionary we're actively rebuilding
-    writeToDisk: true,
+    writeToDisk: emitFile,
   },
   output: {
     publicPath: '/',
