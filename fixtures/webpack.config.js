@@ -12,6 +12,10 @@ module.exports = {
   entry: './app/app.js',
   context: __dirname,
   mode: 'development',
+  devServer: {
+    // Simulates a case where we have to watch the dictionary we're actively rebuilding
+    writeToDisk: true,
+  },
   output: {
     publicPath: '/',
     path: path.resolve(`${__dirname}/assets`),

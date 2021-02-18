@@ -6,7 +6,7 @@
   "readmeFilename": "README.md",
   "repository": "goodhood-eu/i18n-modular",
   "bugs": "https://github.com/goodhood-eu/i18n-modular/issues",
-  "version": "2.0.0-beta.0",
+  "version": "2.0.0-beta.1",
   "keywords": [
     "webpack",
     "phrase",
@@ -32,7 +32,7 @@
     "reinstall": "rm -rf node_modules package-lock.json && npm install",
     "lint": "eslint ./",
     "sync": "DEBUG=i18n_modular I18N_MODULAR_CONTEXT=./fixtures ./bin/cli.js",
-    "start": "DEBUG=i18n_modular I18N_MODULAR_CONTEXT=./fixtures webpack serve --config fixtures/webpack.config.js --port 3000",
+    "start": "DEBUG=i18n_modular PREVIEW_EMIT_FILE=true I18N_MODULAR_CONTEXT=./fixtures webpack serve --config fixtures/webpack.config.js --port 3000",
     "build": "DEBUG=i18n_modular I18N_MODULAR_CONTEXT=./fixtures webpack --config fixtures/webpack.config.js",
     "test:build": "npm run build && PREVIEW_EMIT_FILE=true npm run build && npm run sync build && npm run sync update && npm run sync clean",
     "check": "npm run test:build && npm test && npm run lint",
