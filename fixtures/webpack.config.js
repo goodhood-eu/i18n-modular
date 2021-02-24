@@ -1,6 +1,6 @@
 const path = require('path');
 
-const ManifestPlugin = require('webpack-manifest-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -12,7 +12,12 @@ module.exports = {
   entry: './app/app.js',
   context: __dirname,
   mode: 'development',
+  devServer: {
+    // Simulates a case where we have to watch the dictionary we're actively rebuilding
+    writeToDisk: emitFile,
+  },
   output: {
+    publicPath: '/',
     path: path.resolve(`${__dirname}/assets`),
     filename: '[name]-[contenthash:8].js',
     chunkFilename: '[name]-[chunkhash:8].js',
@@ -28,9 +33,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new I18nModular({ emitFile }),
-    new ManifestPlugin(),
+    new WebpackManifestPlugin(),
     new CompressionPlugin({
-      filename: '[path].gz[query]',
       test: /\.(js|css|html|svg)$/,
     }),
     new HtmlWebpackPlugin(),
