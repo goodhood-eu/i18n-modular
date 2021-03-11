@@ -21,6 +21,10 @@
     "emitFile": {
       "description": "Enables/Disables emitting dictionary files",
       "type": "boolean"
+    },
+    "getId": {
+      "description": "A function to convert file paths to module ids",
+      "instanceof": "Function"
     }
   },
   "required": ["keysRoot", "moduleEnding", "dictionaryPattern"],
