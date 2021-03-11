@@ -35,6 +35,14 @@ module.exports = {
   // Set this to `false` when you don't need to update the original dictionary
   // and only wish to use bundled translations, for example for SSR bundle build.
   emitFile: true,
+
+  // Optional, a function to customize how unique module IDs are generated
+  // Arguments are:
+  //  keysRoot: string, same as above but rebased to be absolute
+  //  moduleEnding: string, same as above
+  //  filePath: string, an absolute path to the translations module file
+  // Must return a stable unique string
+  getId(keysRoot, moduleEnding, filePath) => idString,
 };
 ```
 
@@ -59,9 +67,7 @@ module: {
       use: [{
         loader: i18nLoader,
         options: {
-          // keysRoot and moduleEnding options, same as for the plugin
-          // additionally accepts getId function to generate unique module IDs:
-          // getId(keysRoot: string, moduleEnding: string, filePath: string) : string => moduleId.
+          // keysRoot, moduleEnding, getId: same as for the plugin
         },
       }],
     },
